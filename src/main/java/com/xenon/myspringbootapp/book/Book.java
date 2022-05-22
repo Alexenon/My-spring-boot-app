@@ -1,6 +1,7 @@
-package book;
+package com.xenon.myspringbootapp.book;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,13 +13,13 @@ public class Book {
 
     @Id
     @GeneratedValue
-    private final int id;
+    private int id;
     @Column(name = "name")
-    private final String name;
+    private String name;
     @Column(name = "author")
-    private final String author;
+    private String author;
     @Column(name = "gender")
-    private final String gender;
+    private String gender;
 
     public Book(int id, String name, String author, String gender) {
         this.id = id;
@@ -32,9 +33,19 @@ public class Book {
         return id;
     }
 
+    @JsonSetter
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @JsonGetter
     public String getName() {
         return name;
+    }
+
+    @JsonSetter
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonGetter
@@ -42,8 +53,19 @@ public class Book {
         return author;
     }
 
+    @JsonSetter
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     @JsonGetter
     public String getGender() {
         return gender;
     }
+
+    @JsonSetter
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 }

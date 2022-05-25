@@ -6,8 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 //@Repository
-public interface BookRepository {
-
-    List<Book> getAllBooks();
-
-}
+//public interface BookRepository extends JpaRepository<Book, Integer> {
+//
+//    /**
+//     * Get all the books that are stored in the database
+//     * */
+//    List<Book> getAllBooks();
+//
+//}

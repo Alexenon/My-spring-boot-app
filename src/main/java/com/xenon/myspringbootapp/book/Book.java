@@ -3,12 +3,10 @@ package com.xenon.myspringbootapp.book;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table
 public class Book {
 
     @Id
@@ -20,6 +18,11 @@ public class Book {
     private String author;
     @Column(name = "gender")
     private String gender;
+
+    @SuppressWarnings("unused")
+    public Book() {
+        /* Empty constructor */
+    }
 
     public Book(int id, String name, String author, String gender) {
         this.id = id;
